@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Capsule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div id="nav">
+    <div id="logo">
+        <h1>Time Capsule</h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="capsule.html">Capsule</a></li>
+        </ul>
+    </div>
+   </div>
+
+    <div id="main">
+         <div id="content">
+              <h2>Time Capsule</h2>
+              <p>Time Capsule is a project that allows you to send a message to the future. You can write a letter
+              to yourself or to someone else and set a date for it to be delivered. The message will be stored in a 
+              secure location and will be delivered on the date you specify. You can also choose to keep the message
+              private or make it public. If you choose to make it public, it will be displayed on the Time Capsule website
+              for others to read. You can also choose to receive a notification when the message is delivered. Time Capsule
+              is a fun and unique way to send a message to the future and share your thoughts with others.</p>
+
+              <h2>How it works</h2>
+
+              <p>Time Capsule is easy to use. Simply go to the Time Capsule website and click on the "Create a Capsule" button.</p>
+              <p>You will be prompted to enter your name, email address, and the message you want to send. You can also choose
+                  to make the message public or private, set a delivery date, and choose to receive a notification when the message
+                  is delivered.</p>
+              <p>Once you have entered all the information, click on the "Send" button and your message will be stored
+                  in a secure location. When the delivery date arrives, your message will be sent to the recipient and you will receive
+                  a notification if you chose to do so.</p>
+              <p>You can also view your message on the Time Capsule website and share it with others.</p>
+
+              <p>Time Capsule is a fun and unique way to send a message to the future. 
+              Whether you want to send a message to yourself, a friend, or a loved one, 
+              Time Capsule is a great way to share your thoughts and memories. 
+              You can use Time Capsule to send a message to yourself on your birthday, 
+              anniversary, or other special occasion. You can also use Time Capsule to 
+              send a message to a friend or loved one on their birthday, anniversary, 
+              or other special occasion. Time Capsule is a great way to share your thoughts 
+              and memories with others and create a lasting memory that will be cherished 
+              for years to come.</p>
+            </div>
+
+    <div id="mainform">
+        <form action="capsule.html" method="post">
+            <h2>Create a Capsule</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <label for="public">Make Public:</label>
+            <input type="checkbox" id="public" name="public">
+            <label for="date">Delivery Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="notify">Notify Me:</label>
+            <input type="checkbox" id="notify" name="notify">
+            <label for="media">Add Media: </label>
+            <input type="file" id="media" name="media">
+            <div class="spacing"></div>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>

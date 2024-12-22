@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Capsules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nav">
+        <div id="logo">
+            <h1>Time Capsule</h1>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="capsule.html">Capsule</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="content">
+            <h2>My Capsules</h2>
+            <p>Your saved capsules are listed below. Locked capsules will only unlock after the set date.</p>
+            <div id="capsule-list" class="capsule" ></div>
+            <button id="delete-all" style="margin-top: 20px;">Delete All Capsules</button>
+            <button id="unlock-all" style="margin-top: 20px;">Unlock All Capsules</button>
+        </div>
+    </div>
+    <script>
+        const capsuleList = document.querySelector('#capsule-list');
+        const deleteAllBtn = document.querySelector('#delete-all');
+        const unlockAllBtn = document.querySelector('#unlock-all');
+        const capsules = JSON.parse(localStorage.getItem('timeCapsules')) || [];
+    
+        function renderCapsules(isUnlocked = false) {
+            capsuleList.innerHTML = '';
+    
+            if (capsules.length === 0) {
+                capsuleList.innerHTML = '<p>No capsules created yet!</p>';
+                return;
+            }
+    
+            capsules.forEach((capsule) => {
+                const today = new Date().toISOString().split('T')[0];
+                const isLocked = !isUnlocked && new Date(capsule.date) > new Date(today);
+    
+                const capsuleDiv = document.createElement('div');
+                Object.assign(capsuleDiv.style, {
+                    marginBottom: '20px',
+                    padding: '10px',
+                    border: '1px solid #ccc',
+                    borderRadius: '5px',
+                    backgroundColor: '',
+                    color: 'purple'
+                });
+    
+                const mediaHTML = capsule.media
+                    ? `<img src="${capsule.media}" alt="Attached Media" style="max-width:100%; margin-top:10px;">`
+                    : '';
+    
+                capsuleDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${capsule.name}</p>
+                    <p><strong>Message:</strong> ${isLocked ? '🔒 Locked' : capsule.message}</p>
+                    <p><strong>Delivery Date:</strong> ${capsule.date}</p>
+                    <p><strong>Status:</strong> ${isLocked ? 'Locked' : 'Unlocked'}</p>
+                    ${!isLocked ? mediaHTML : ''}
+                `;
+    
+                capsuleList.appendChild(capsuleDiv);
+            });
+        }
+    
+        renderCapsules();
+    
+        deleteAllBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to delete all capsules?')) {
+                localStorage.removeItem('timeCapsules');
+                alert('All capsules have been deleted.');
+                renderCapsules();
+            }
+        });
+    
+        unlockAllBtn.addEventListener('click', () => {
+            const password = prompt('Enter the password to unlock all capsules:');
+            if (password === 'Faisal@123') {
+                alert('All capsules have been unlocked.');
+                renderCapsules(true);
+            } else {
+                alert('Incorrect password. Unable to unlock capsules.');
+            }
+        });
+    </script>
+    
+</body>
+</html>

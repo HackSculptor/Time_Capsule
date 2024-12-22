@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111; /* Dark background for better contrast */
+    color: #f4f4f9; /* Light text color for readability */
+    line-height: 1.6;
+}
+
+#nav {
+    background-color: #000; /* Dark background for the nav */
+    color: #39ff14; /* Neon green text for the nav */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav #logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold; /* Added font weight for prominence */
+}
+
+#nav .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#nav .menu ul li {
+    margin: 0 10px;
+}
+
+#nav .menu ul li a {
+    color: #00aaff; /* Neon blue links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#nav .menu ul li a:hover {
+    text-decoration: underline;
+    color: #ff1493; /* Neon pink on hover */
+}
+
+#main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #222; /* Dark gray background for main content */
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3); /* Stronger neon shadow for effect */
+}
+
+#content h2 {
+    color: #ff00ff; /* Neon pink for headings */
+    margin-bottom: 10px;
+}
+
+#content p {
+    color: #f4f4f9;
+    margin-bottom: 15px;
+}
+
+#mainform {
+    margin-top: 20px;
+    padding: 20px;
+    background: #333; /* Slightly lighter gray background */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for input form */
+}
+
+#mainform h2 {
+    color: #ff00ff; /* Neon pink for form headings */
+    margin-bottom: 20px;
+}
+
+#mainform label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #39ff14; /* Neon green for labels */
+}
+
+#mainform input, #mainform textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #444; /* Darker background for form inputs */
+    color: #f4f4f9; /* Light text for input fields */
+}
+
+#mainform input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+#mainform input[type="file"] {
+    padding: 5px;
+}
+
+.spacing {
+    margin-bottom: 10px;
+}
+
+#mainform input[type="submit"] {
+    background: #39ff14; /* Neon green for submit button */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#mainform input[type="submit"]:hover {
+    background: #00aaff; /* Neon blue on hover */
+}
+
+
+button {
+    background-color: #39ff14; /* Neon green buttons */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff1493; /* Neon pink on hover */
+}
